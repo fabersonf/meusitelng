@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNG Automotive Parts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Geral */
+        body {
+            font-family: 'Sora', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-container {
+            background-color: #fff;
+            padding: 2em;
+            margin-bottom: 2em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Cabeçalho */
+        header {
+            background-color: #ffffff;
+            color: #000000;
+            padding: 1em 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        header nav a {
+            color: #053B50;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 0.5em;
+            border-radius: 0.3em;
+            transition: background-color 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: #FF6B00;
+        }
+
+        /* Estilos para o logo */
+        .logo {
+            max-width: 160px;
+            /* Largura do logo */
+            height: auto;
+            /* Mantém a proporção */
+        }
+
+        /* Estilos para as imagens das redes sociais */
+        .social-links a img {
+            height: 2em;
+            /* Ajuste o tamanho conforme necessário */
+            width: auto;
+            margin: 0.5em;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-links a img:hover {
+            opacity: 0.7;
+        }
+
+        /* Sobre */
+        .sobre {
+            background-color: #ffffff;
+        }
+
+        .sobre h2 {
+            color: #053B50;
+            border-bottom: 2px solid #053B50;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .sobre-content {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+        }
+
+        .sobre-content img {
+            max-width: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Peças */
+        .pecas {
+            background-color: #FFF;
+        }
+
+        .pecas h2 {
+            color: #053B50;
+            border-bottom: 2px solid #053B50;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .pecas-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5em;
+        }
+
+        .peca {
+            background-color: #F9F9F9;
+            padding: 1em;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+            max-width: 250px;
+        }
+
+        .peca:hover {
+            transform: translateY(-5px);
+        }
+
+        .peca img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1em;
+        }
+
+        .peca h3 {
+            color: #176B87;
+            margin-bottom: 0.5em;
+        }
+
+        /* (Depoimentos) */
+        aside {
+            background-color: #ffffff;
+            padding: 1em;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2em;
+        }
+
+        .aside-container {
+            text-align: center;
+        }
+
+        aside h2 {
+            color: #053B50;
+            border-bottom: 2px solid #053B50;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        aside button {
+            background-color: #053B50;
+            color: #fff;
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: 0.3em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        aside button:hover {
+            background-color: #FF6B00;
+        }
+
+        .depoimento {
+            font-style: italic;
+            margin-bottom: 1em;
+        }
+
+        .depoimento cite {
+            display: block;
+            text-align: right;
+            color: #555;
+        }
+
+        /* Contato */
+        .contato {
+            background-color: #FFF;
+        }
+
+        .contato h2 {
+            color: #053B50;
+            border-bottom: 2px solid #053B50;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        .contato form label {
+            display: block;
+            margin-top: 0.5em;
+            color: #053B50;
+            font-weight: bold;
+        }
+
+        .contato form input,
+        .contato form textarea {
+            width: 100%;
+            padding: 0.75em;
+            margin-top: 0.3em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 0.3em;
+            box-sizing: border-box;
+        }
+
+        .contato form button {
+            background-color: #053B50;
+            color: #faf6f6;
+            padding: 0.75em 1.5em;
+            border: none;
+            border-radius: 0.3em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contato form button:hover {
+            background-color: #176B87;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #053B50;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer p {
+            margin: 0.5em 0;
+        }
+
+        /* Responsivo */
+        @media screen and (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            header nav {
+                margin-top: 1em;
+            }
+
+            header nav a {
+                display: block;
+                margin: 0.5em 0;
+            }
+
+            .sobre-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .sobre-content img {
+                max-width: 100%;
+            }
+
+            .pecas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-container">
+            <img src="https://www.lng.com.br/wp-content/uploads/2018/04/cropped-logo_lng.png" alt="LNG Automotive Parts" class="logo">
+            <nav>
+                <a href="#sobre">Sobre nós</a>
+                <a href="#pecas">Nossos Produtos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+            <div class="social-links">
+                <a href="#"><img src="https://imagepng.org/wp-content/uploads/2017/09/facebook-icone-icon-7.png" alt="Facebook"></a>
+                <a href="#"><img src="https://imagepng.org/wp-content/uploads/2017/08/instagram-icone-icon-7.png" alt="Instagram"></a>
+                <a href="#"><img src="https://imagepng.org/wp-content/uploads/2017/08/whatsapp-icone-7.png" alt="WhatsApp"></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre" class="sobre">
+            <div class="container section-container">
+                <h2>Sobre nós</h2>
+                <div class="sobre-content">
+                    <img src="https://www.lng.com.br/wp-content/uploads/2018/08/empresa_aereo.jpg" alt="Foto da Empresa LNG">
+                    <p>
+                        A LNG Automotive Parts é uma empresa especializada na distribuição de peças automotivas de alta qualidade.
+                        Com anos de experiência no mercado, oferecemos um amplo catálogo de produtos para diversas marcas e modelos
+                        de veículos pesados. Nosso compromisso é fornecer soluções eficientes e confiáveis para nossos clientes, garantindo
+                        a satisfação e o bom funcionamento de seus veículos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pecas" class="pecas">
+            <div class="container section-container">
+                <h2>Nossos Produtos</h2>
+                <div class="pecas-grid">
+                    <div class="peca">
+                        <img src="https://cdn.vnda.com.br/1000x/pecagrigo/2022/09/24/04_40_48_148_00000054886504274.jpg?v=1664005248" alt="Motor">
+                        <h3>Bombas Hidráulicas</h3>
+                        <p>Bombas Hidráulicas novas com qualidade.</p>
+                    </div>
+                    <div class="peca">
+                        <img src="https://stgecomm.blob.core.windows.net/imagesprod2/0458606_cuica-de-freio-lng-43820.jpeg" alt="Freios">
+                        <h3>Sistema de Freios</h3>
+                        <p>Cuícas de Freios, discos e sistemas completos de freio.</p>
+                    </div>
+                    <div class="peca">
+                        <img src="https://cdn.vnda.com.br/1000x/pecagrigo/2022/09/24/14_09_04_0_00000873118404708.jpg?v=1664039344" alt="Suspensão">
+                        <h3>Suspensão</h3>
+                        <p>Amortecedores, molas e componentes de direção.</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <aside>
+            <div class="container aside-container">
+                <h2>Depoimentos</h2>
+                <div class="depoimento">
+                    <p>"Excelente atendimento e peças de qualidade! Recomendo a LNG Automotive Parts."</p>
+                    <cite>
+                         Faberson Furquim, Cliente </cite>
+                </div>
+                <button>Solicite um Orçamento</button>
+            </div>
+        </aside>
+
+        <section id="contato" class="contato">
+            <div class="container section-container">
+                <h2>Entre em Contato</h2>
+                <form action="#" method="post">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <p>Endereço: Avenida Antônio Ortega 3450 - Cabreúva/SP</p>
+            <p>Telefone: (11) 4529-1444</p>
+            <p>&copy; 2025 LNG Automotive Parts. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
